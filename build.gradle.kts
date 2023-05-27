@@ -16,7 +16,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("org.grumpyf0x48.command_line_quickstart.Command")
+    mainClass.set("org.grumpyf0x48.noirak.Command")
 }
 
 java {
@@ -28,7 +28,7 @@ distributions {
     main {
         contents {
             from("${project.buildDir}/generated") {
-                include("command_line_quickstart")
+                include("noirak")
                 into("completion")
             }
         }
@@ -36,11 +36,11 @@ distributions {
     create("native") {
         contents {
             from("${project.buildDir}/generated") {
-                include("command_line_quickstart")
+                include("noirak")
                 into("completion")
             }
             from("${project.buildDir}/native/nativeCompile") {
-                include("command_line_quickstart")
+                include("noirak")
                 into("bin")
             }
         }
@@ -51,7 +51,7 @@ val generateCompletion = task("generateCompletion", JavaExec::class) {
     setMain("picocli.AutoComplete")
     setClasspath(files(configurations.compileClasspath, configurations.annotationProcessor, sourceSets["main"].runtimeClasspath))
     doFirst {
-        args("--force", "--name=command_line_quickstart", "--completionScript=${project.buildDir}/generated/command_line_quickstart", "org.grumpyf0x48.command_line_quickstart.Command")
+        args("--force", "--name=noirak", "--completionScript=${project.buildDir}/generated/noirak", "org.grumpyf0x48.noirak.Command")
     }
 }
 
@@ -85,7 +85,7 @@ graalvmNative {
             resources.autodetect()
         }
         named("main") {
-            imageName.set("command_line_quickstart")
+            imageName.set("noirak")
         }
     }
 }

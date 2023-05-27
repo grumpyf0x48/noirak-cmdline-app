@@ -28,5 +28,5 @@ jobs:
           arguments: test distZip installDist
       - uses: actions/upload-artifact@v3
         with:
-          name: command_line_quickstart_${{ github.sha }}
-          path: build/install/command_line_quickstart
+          name: noirak_${{ github.sha }}
+          path: build/install/noirak

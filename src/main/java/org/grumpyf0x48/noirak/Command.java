@@ -1,4 +1,4 @@
-package org.grumpyf0x48.command_line_quickstart;
+package org.grumpyf0x48.noirak;
 
 import picocli.CommandLine;
 

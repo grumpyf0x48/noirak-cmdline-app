@@ -1,4 +1,4 @@
-package org.grumpyf0x48.command_line_quickstart;
+package org.grumpyf0x48.noirak;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
